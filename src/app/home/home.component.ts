@@ -34,7 +34,7 @@ export class HomeComponent implements OnInit {
     this.products = this.product_service.getProduct();
   }
 
-  //Add product to Cart
+  //Agregar productos al carrito
   addToCart(product: any) {
     if (!this.product_service.productInCart(product)) {
       product.quantity = 1;
@@ -54,13 +54,13 @@ export class HomeComponent implements OnInit {
   //   this.product_service.saveCart();
   // }
 
-  //Remove a Product from Cart
+  //Eliminar producto del carrito
   removeFromCart(product: any) {
     this.product_service.removeProduct(product);
     this.products = this.product_service.getProduct();
   }
 
-  //Calculate Total
+  //Calcular el Total
 
   get total() {
     return this.products?.reduce(
